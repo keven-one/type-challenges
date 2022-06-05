@@ -1,3 +1,8 @@
+type KebabCase<S,IsFirst extends boolean = true> = 
+S extends `${infer First}${infer Rest}` 
+? DealStringLowercase<First,Rest,IsFirst> 
+: S;
+
 type DealStringLowercase<P extends string, Rest extends string,IsFirst extends boolean = true> = 
  P extends Lowercase<P> ?
  `${Lowercase<P>}${KebabCase<Rest,false>}`
@@ -5,10 +10,7 @@ type DealStringLowercase<P extends string, Rest extends string,IsFirst extends b
 :`-${Lowercase<P>}${KebabCase<Rest,false>}`;
 
 
-type KebabCase<S,IsFirst extends boolean = true> = 
-S extends `${infer First}${infer Rest}` 
-? DealStringLowercase<First,Rest,IsFirst> 
-: S;
+
 
 
 
