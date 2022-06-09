@@ -1,0 +1,1 @@
+type RemoveIndexSignature<T> = {[P in keyof T as P extends `${infer K}` ? P : never]:T[P]}
