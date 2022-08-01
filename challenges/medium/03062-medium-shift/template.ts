@@ -1,0 +1,1 @@
+type Shift<T> = T extends [infer P,...infer R] ? [...R] : T
