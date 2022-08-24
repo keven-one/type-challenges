@@ -6,6 +6,7 @@ type cases = [
   Expect<Equal<FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>, (arg0: boolean, arg1: number, arg2: string) => void>>,
 ]
 
+//test
 type errors = [
   // @ts-expect-error
   FlipArguments<'string'>,
